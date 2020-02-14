@@ -56,10 +56,10 @@ build-in-docker:
 
 .PHONY: build
 build:
-	go build ./cmd/telemeter-client
-	go build ./cmd/telemeter-server
-	go build ./cmd/authorization-server
-	go build ./cmd/telemeter-benchmark
+	go build -mod=vendor ./cmd/telemeter-client 
+	go build -mod=vendor ./cmd/telemeter-server
+	go build -mod=vendor ./cmd/authorization-server
+	go build -mod=vendor ./cmd/telemeter-benchmark
 
 .PHONY: image
 image: .hack-operator-image
